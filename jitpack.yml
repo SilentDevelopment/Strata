@@ -1,0 +1,5 @@
+﻿jdk:
+  - openjdk21
+
+install:
+  - bash ./mvnw -B -DskipTests install

@@ -1,5 +1,13 @@
 ﻿jdk:
   - openjdk21
 
+before_install:
+  - sdk install java 21.0.11-tem
+  - sdk use java 21.0.11-tem
+
 install:
-  - bash ./mvnw -B -DskipTests install
+  - java -version
+  - javac -version
+  - bash ./mvnw -version
+  - nl -ba strata-api/src/main/java/io/github/silentdevelopment/strata/Key.java | sed -n '1,40p'
+  - bash ./mvnw -B -DskipTests clean install
